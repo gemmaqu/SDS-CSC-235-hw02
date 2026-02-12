@@ -28,18 +28,129 @@
         <div class="summary stats">
             <h2>Summary Statistics</h2>
             <h3>Two Quantatitive Statistics</h3>
-            <h4>1. Existing Wattage</h4>
-            <h4>2. Savings</h4>
+            <div class="plot">
+                <h4>Summary Statistics for Existing Wattage</h4>
+                <p>Description/context here...</p>
+            </div>
+            <div class="plot">
+                <h4>Summary Statistics for Savings</h4>
+                <p>Description/context here...</p>
+            </div>
 
             <h3>Two ordinal Statistics</h3>
-            <h4>1. New Size </h4>
-            <h4>2. Existing Size of Lumens</h4>
+            <div class="plot">
+                <h4>Summary Statistics for New Size</h4>
+                <p>Description/context here...</p>
+            </div>
+            <div class="plot">
+                <h4>Summary Statistics for Existing Lumen Sizes</h4>
+                <p>Description/context here...</p>
+            </div>
 
             <h3>Two Categorical Statistics</h3>
-            <h4>1. District </h4>
-            <h4>2. Type of old lights</h4>
+            <div class="plot">
+                <h4>Summary Statistics for District</h4>
+                <p>Description/context here...</p>
+            </div>
+            <div class="plot">
+                <h4>Summary Statistics for Type of Old lights</h4>
+                <p>Description/context here...</p>
+            </div>
           
         </div>
+
+        <div class="Distribution">
+            <h2> Variable Distribution/Frequency </h2>
+            <h3>Quantitative Variables</h3>
+
+            <div class="plot">
+                <h4>Distribution of Existing Wattage</h4>
+                <p>Description/context here...</p>
+            </div>
+            
+            <div class="plot">
+                <h4>Distribution of Annual Savings</h4>
+                <img src="images/savings_histogram.png" alt="Annual Savings Histogram">
+                <p>Description/context here...</p>
+            </div>
+
+            <h3>Ordinal Variables</h3>
+            <div class="plot">
+                <h4>Frequency of New LED Wattage Sizes</h4>
+                <img src="images/newsize_barplot.png" alt="New Size Bar Chart">
+                <p>Description/context here...</p>
+            </div>
+            <div class="plot">
+                <h4>Frequency of Existing Brightness Levels</h4>
+                <img src="images/lumens_barplot.png" alt="Lumens Bar Chart">
+                <p>Description/context here...</p>
+            </div>
+
+            <h3>Categorical Variables</h3>
+            <div class="plot">
+                <h4>Distribution of Street Lights by District</h4>
+                <img src="images/district_barplot.png" alt="District Bar Chart">
+                <p>Description/context here...</p>
+            </div>     
+            <div class="plot">
+                <h4>Frequency of Old Light Technology Types</h4>
+                <img src="images/type_barplot.png" alt="Light Type Bar Chart">
+                <p>Description/context here...</p>
+            </div>
+
+
+        </div>
+
+        <div class="Three Vis">
+            <h2>Exploring Relationships Between Variables</h2>
+            <p>These visualizations investigate potential connections between different aspects of the street light retrofits.</p>
+            <div class="plot">
+                <h3>1. Do certain neighborhoods save more money?</h3>
+                <h4>Annual Cost Savings by Boston District</h4>
+                <p>This boxplot compares cost savings across different Boston neighborhoods. We can see that</p>
+            </div>
+
+            <div class="plot">
+                <h3>2. Does higher old wattage lead to more energy savings?</h3>
+                <h4>Relationship Between Old Wattage and Energy Savings</h4>
+                <p>This scatter plot reveals the relationship between the power consumption of old lights and the annual energy saved.</p>
+            </div>
+
+            <div class="plot">
+                <h3>3. Which old light technology was most wasteful?</h3>
+                <h4>Cost Savings by Old Light Technology Type</h4>
+                <p>Comparing different old light technologies shows [describe which type saves more, the distribution differences, etc.]</p>
+            </div>
+
+        </div>
+
+        <div class="hypotheses">
+            <h2>Testable Hypotheses</h2>
+            <p>Based on the exploratory data analysis, three testable hypotheses emerged:</p>
+
+            <div class="hypothesis">
+                <h3>Hypothesis 1: Geographic Variation in Savings</h3>
+                <p><strong>Statement:</strong> Certain Boston districts have significantly higher average cost savings from LED retrofits than others.</p>
+                <p><strong>How EDA led to this:</strong> The boxplot comparing savings across districts (see "Annual Cost Savings by Boston District" above) revealed visible differences in median savings between neighborhoods, suggesting geographic patterns in retrofit efficiency.</p>
+                <p><strong>Statistical Test:</strong> One-way ANOVA to compare mean savings across districts (α = 0.05)</p>
+            </div>
+
+            <div class="hypothesis">
+                <h3>Hypothesis 2: Technology Type Impact</h3>
+                <p><strong>Statement:.</p>
+                <p><strong>How EDA led to this:</strong> The comparison of savings by old light type (see "Cost Savings by Old Light Technology Type" above) showed distinct distributions between technology types, indicating some old technologies were more wasteful than others.</p>
+                <p><strong>Statistical Test:</strong> Independent samples t-test or ANOVA (α = 0.05)</p>
+            </div>
+
+            <div class="hypothesis">
+                <h3>Hypothesis 3: Wattage-Savings Relationship</h3>
+                <p><strong>Statement:</strong> There is a positive linear relationship between existing light wattage and energy (kWh) saved annually.</p>
+                <p><strong>How EDA led to this:</strong> The scatter plot of old wattage vs. energy savings (see "Relationship Between Old Wattage and Energy Savings" above) suggests a potential positive correlation, indicating higher-wattage old lights produce greater energy savings when replaced.</p>
+                <p><strong>Statistical Test:</strong> Pearson correlation coefficient and linear regression (α = 0.05)</p>
+            </div>
+        </div>
+
+
 
 
 
