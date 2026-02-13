@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
         <title>
             Gemma's HW2
         </title>
+        <button onclick="changeColor()">Change Background Color!</button>
     </head>
+    
+
 
     <body>
         <div class="header">
@@ -15,7 +19,7 @@
 
         <div class="intro">
             <h2>
-                Introducetion of the data & biases in the data
+                Introduction of the data & biases in the data
             </h2>
             <p>
                 This analysis uses the Street Light Retrofits 2014 dataset from Boston's open data portal. The dataset tracks 9,789 street lights that the city converted to LEDs in 2014, replacing older Sodium and Mercury vapor lamps. For each light, we have the technical details (how much power it used before and after), where it's located, how much money the city saves annually, and when the work was done.
@@ -23,47 +27,56 @@
             <p>
                 That said, this data has some important limitations. The most obvious is that we're only looking at lights that actually got converted - we don't know anything about lights that were skipped or postponed, which could tell us something about why certain areas were prioritized over others. Speaking of priorities, we also don't know if some neighborhoods got upgraded first for reasons that aren't in the data (maybe political pressure, available funding, or just easier infrastructure). The cost savings assume electricity rates stayed constant throughout the year, which probably isn't quite right. And finally, while we can measure energy savings down to the watt, we have no idea whether people actually like these new lights or if they're brighter, dimmer, or a different color than what was there before.
             </p>
+            <p>
+                Data Source: <a href="https://data.boston.gov/dataset/street-light-retrofits-2014" target="_blank">Boston Open Data - Street Light Retrofits</a>
+            </p>
+
+            
         </div>
+
+        <hr>
 
         <div class="summary stats">
             <h2>Summary Statistics</h2>
             <h3>Two Quantatitive Statistics</h3>
             <div class="plot">
                 <h4>Summary Statistics for Existing Wattage</h4>
-                <img src="images/1.png"  alt="Summary Statistics for Existing Wattage"  width="300">
-                <p>Description/context here...</p>
+                <img src="images/1.png"  alt="Summary Statistics for Existing Wattage"  width="200">
+                <p>The old lights consumed between 0.192W and 0.470W, with a median of 0.295W. Most lights clustered at two main wattage levels (0.192W and 0.295W), suggesting the city used two standard bulb types..</p>
             </div>
             <div class="plot">
                 <h4>Summary Statistics for Savings</h4>
-                <img src="images/2.png"  alt="Summary Statistics for Savings"  width="300">
-                <p>Description/context here...</p>
+                <img src="images/2.png"  alt="Summary Statistics for Savings"  width="200">
+                <p>Annual savings range from $19.21 to $95.50 per light, with a median of $54.50. The median exceeds the mean ($46.10), indicating some lower-saving lights pull the average down.</p>
             </div>
 
             <h3>Two ordinal Statistics</h3>
             <div class="plot">
                 <h4>Summary Statistics for New Size</h4>
-                <img src="images/5.png"  alt="Summary Statistics for Existing Lumen Sizes"  width="600">
-                <p>Description/context here...</p>
+                <img src="images/5.png"  alt="Summary Statistics for New Size"  width="300">
+                <p>The city chose three main LED wattage sizes: 43W (3,787 lights), 62W (3,890 lights), and 100W (2,093 lights), with very few higher-wattage options (110W, 209W, 274W had fewer than 10 installations each).</p>
             </div>
             <div class="plot">
                 <h4>Summary Statistics for Existing Lumen Sizes</h4>
-                <img src="images/6.png"  alt="Summary Statistics for Existing Lumen Sizes"  width="600">
-                <p>Description/context here...</p>
+                <img src="images/6.png"  alt="Summary Statistics for Existing Lumen Sizes"  width="300">
+                <p>The old lights had primarily three brightness levels: 16,000 lumens (3,635 lights), 25,000 lumens (4,371 lights), and 11,000 lumens (1,592 lights). Higher brightness levels (20,000 and 45,000 lumens) were rare.</p>
             </div>
 
             <h3>Two Categorical Statistics</h3>
             <div class="plot">
                 <h4>Summary Statistics for District</h4>
-                <img src="images/9.png"  alt="Summary Statistics for District"  width="600">
-                <p>Description/context here...</p>
+                <img src="images/9.png"  alt="Summary Statistics for District"  width="900">
+                <p>Retrofits were concentrated in Dorchester (3,706 lights) and Roxbury (1,999 lights), with Brighton (801 lights) and South Boston (622 lights) also receiving substantial upgrades. Smaller districts like Hyde Park (28 lights) and Back Bay/Beacon Hill (24 lights) had minimal installations.</p>
             </div>
             <div class="plot">
                 <h4>Summary Statistics for Type of Old lights</h4>
-                <img src="images/10.png"  alt="Summary Statistics for Type of Old lights"  width="600">
-                <p>Description/context here...</p>
+                <img src="images/10.png"  alt="Summary Statistics for Type of Old lights"  width="300">
+                <p>The vast majority of old lights were Sodium vapor (8,011 lights), with Mercury vapor making up the remainder (1,778 lights). Sodium technology dominated Boston's street lighting before the LED conversion.</p>
             </div>
           
         </div>
+
+        <hr>
 
         <div class="Distribution">
             <h2> Variable Distribution/Frequency </h2>
@@ -72,41 +85,43 @@
             <div class="plot">
                 <h4>Distribution of Existing Wattage</h4>
                 <img src="images/4.png"  alt="Distribution of Existing Wattage"  width="600">
-                <p>Description/context here...</p>
+                <p>This histogram reveals a bimodal distribution with most old lights clustered at 0.192W and 0.295W, confirming two standard wattage types were used before the retrofit.</p>
             </div>
             
             <div class="plot">
                 <h4>Distribution of Annual Savings</h4>
                 <img src="images/3.png"  alt="Distribution of Annual Savings"  width="600">
-                <p>Description/context here...</p>
+                <p>Savings are concentrated around $50-60, with a slight left skew. Some lights save as little as $20 while others reach $95, reflecting differences in old light efficiency.</p>
             </div>
 
             <h3>Ordinal Variables</h3>
             <div class="plot">
                 <h4>Frequency of New LED Wattage Sizes</h4>
                 <img src="images/7.png"  alt="Frequency of New LED Wattage Sizes"  width="600">
-                <p>Description/context here...</p>
+                <p>Three LED sizes dominate: 43W (~3,800 lights), 62W (~3,900 lights), and 100W (~2,100 lights). Higher wattages (110W, 209W, 274W) were rarely used.</p>
             </div>
             <div class="plot">
                 <h4>Frequency of Existing Brightness Levels</h4>
                 <img src="images/8.png"  alt="Frequency of Existing Brightness Levels"  width="600">
-                <p>Description/context here...</p>
+                <p>Most old lights operated at either 16,000 or 25,000 lumens, with fewer at 11,000 lumens. Very few high-brightness (45,000 lumen) lights existed.</p>
             </div>
 
             <h3>Categorical Variables</h3>
             <div class="plot">
                 <h4>Distribution of Street Lights by District</h4>
-                <img src="images/11.png" alt="Distribution of Street Lights by District">
-                <p>Description/context here...</p>
+                <img src="images/11.png" alt="Distribution of Street Lights by District" width="600">
+                <p>Dorchester received the most retrofits (~3,700 lights), followed by Roxbury (~2,000) and Brighton (~800). Smaller districts like Hyde Park had minimal installations.</p>
             </div>     
             <div class="plot">
                 <h4>Frequency of Old Light Technology Types</h4>
-                <img src="images/12.png" alt="Frequency of Old Light Technology Types">
-                <p>Description/context here...</p>
+                <img src="images/12.png" alt="Frequency of Old Light Technology Types" width="600">
+                <p>Sodium vapor dominated Boston's pre-retrofit street lighting (~8,000 lights), with Mercury vapor making up less than 20% of installations (~1,800 lights).</p>
             </div>
 
 
         </div>
+
+        <hr>
 
         <div class="Three Vis">
             <h2>Exploring Relationships Between Variables</h2>
@@ -114,25 +129,27 @@
             <div class="plot">
                 <h3>1. Do certain neighborhoods save more money?</h3>
                 <h4>Annual Cost Savings by Boston District</h4>
-                <img src="images/13.png" alt="Annual Cost Savings by Boston District">
-                <p>This boxplot compares cost savings across different Boston neighborhoods. We can see that</p>
+                <img src="images/13.png" alt="Annual Cost Savings by Boston District" width="600">
+                <p>This boxplot compares cost savings across different Boston neighborhoods. We can see that most districts show similar median savings ($45-55), but South Boston stands out with the highest median around $95. Roxbury shows the widest variation in savings.</p>
             </div>
 
             <div class="plot">
                 <h3>2. Does higher old wattage lead to more energy savings?</h3>
                 <h4>Relationship Between Old Wattage and Energy Savings</h4>
-                <img src="images/14.png" alt="Relationship Between Old Wattage and Energy Savings">
-                <p>This scatter plot reveals the relationship between the power consumption of old lights and the annual energy saved.</p>
+                <img src="images/14.png" alt="Relationship Between Old Wattage and Energy Savings" width="600">
+                <p>This scatter plot reveals the relationship between the power consumption of old lights and the annual energy saved. Clear positive clusters appear at distinct wattage levels (0.19W, 0.29W, 0.47W), with higher old wattage corresponding to greater energy savings, supporting a linear relationship.</p>
             </div>
 
             <div class="plot">
                 <h3>3. Which old light technology was most wasteful?</h3>
-                <h4>Cost Savings by Old Light Technology Type</h4
-                <img src="images/15.png" alt="Cost Savings by Old Light Technology Type">
-                <p>Comparing different old light technologies shows [describe which type saves more, the distribution differences, etc.]</p>
+                <h4>Cost Savings by Old Light Technology Type</h4>
+                <img src="images/15.png" alt="Cost Savings by Old Light Technology Type" width="600">
+                <p>Comparing different old light technologies shows mercury vapor shows a narrow, consistent savings distribution around $60, while Sodium vapor has a lower median (~$45) but much greater variability, ranging from $20 to $95.</p>
             </div>
 
         </div>
+
+        <hr>
 
         <div class="hypotheses">
             <h2>Testable Hypotheses</h2>
@@ -140,38 +157,25 @@
 
             <div class="hypothesis">
                 <h3>Hypothesis 1: Geographic Variation in Savings</h3>
-                <p><strong>Statement:</strong> Certain Boston districts have significantly higher average cost savings from LED retrofits than others.</p>
-                <p><strong>How EDA led to this:</strong> The boxplot comparing savings across districts (see "Annual Cost Savings by Boston District" above) revealed visible differences in median savings between neighborhoods, suggesting geographic patterns in retrofit efficiency.</p>
-                <p><strong>Statistical Test:</strong> One-way ANOVA to compare mean savings across districts (α = 0.05)</p>
+                <p>Statement: Certain Boston districts have significantly higher average cost savings from LED retrofits than others.</p>
+                <p>How EDA led to this: The boxplot comparing savings across districts (see "Annual Cost Savings by Boston District" above) revealed visible differences in median savings between neighborhoods.</p>
             </div>
 
             <div class="hypothesis">
-                <h3>Hypothesis 2: Technology Type Impact</h3>
-                <p><strong>Statement:.</p>
-                <p><strong>How EDA led to this:</strong> The comparison of savings by old light type (see "Cost Savings by Old Light Technology Type" above) showed distinct distributions between technology types, indicating some old technologies were more wasteful than others.</p>
-                <p><strong>Statistical Test:</strong> Independent samples t-test or ANOVA (α = 0.05)</p>
+                <h3>Hypothesis 2: Wattage-Savings Relationship</h3>
+                <p>Statement: There is a positive linear relationship between existing light wattage and energy (kWh) saved annually.</p>
+                <p>How EDA led to this: The scatter plot of old wattage vs. energy savings (see "Relationship Between Old Wattage and Energy Savings" above) suggests a potential positive correlation.</p>
             </div>
 
             <div class="hypothesis">
-                <h3>Hypothesis 3: Wattage-Savings Relationship</h3>
-                <p><strong>Statement:</strong> There is a positive linear relationship between existing light wattage and energy (kWh) saved annually.</p>
-                <p><strong>How EDA led to this:</strong> The scatter plot of old wattage vs. energy savings (see "Relationship Between Old Wattage and Energy Savings" above) suggests a potential positive correlation, indicating higher-wattage old lights produce greater energy savings when replaced.</p>
-                <p><strong>Statistical Test:</strong> Pearson correlation coefficient and linear regression (α = 0.05)</p>
+                <h3>Hypothesis 3: Technology Type Impact</h3>
+                <p>Statement: Mercury vapor lights generate significantly higher annual cost savings when replaced with LEDs compared to Sodium vapor lights..</p>
+                <p>How EDA led to this: The comparison of savings by old light type (see "Cost Savings by Old Light Technology Type" above) showed distinct distributions between technology types.</p>
             </div>
         </div>
 
-
-
-
-
-
-
+        <script src="index.js"></script> 
 
     </body>
-
-
-
-
-
 
 </html>
